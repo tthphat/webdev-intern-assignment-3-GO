@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Candidate {
+  registrationNumber String @id
+  math Decimal? @db.Decimal(4,2)
+  literature Decimal? @db.Decimal(4,2)
+  foreignLanguage Decimal? @db.Decimal(4,2)
+  physics Decimal? @db.Decimal(4,2)
+  chemistry Decimal? @db.Decimal(4,2)
+  biology Decimal? @db.Decimal(4,2)
+  history Decimal? @db.Decimal(4,2)
+  geography Decimal? @db.Decimal(4,2)
+  civicEducation Decimal? @db.Decimal(4,2)
+  foreignLanguageCode String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("candidates")
+}
