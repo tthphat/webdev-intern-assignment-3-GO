@@ -1,13 +1,7 @@
-export const SUBJECTS = [
-  { key: 'math', label: 'Math' },
-  { key: 'literature', label: 'Literature' },
-  { key: 'physics', label: 'Physics' },
-  { key: 'chemistry', label: 'Chemistry' },
-  { key: 'biology', label: 'Biology' },
-  { key: 'history', label: 'History' },
-  { key: 'geography', label: 'Geography' },
-  { key: 'civicEducation', label: 'Civic Education' },
-  { key: 'foreignLanguage', label: 'Foreign Language' },
-] as const;
+import { SUBJECT_LABELS, SubjectCode } from './subject.enum.js';
 
-export type SubjectKey = (typeof SUBJECTS)[number]['key'];
+export const SUBJECTS: { key: SubjectCode; label: string }[] = Object.values(
+  SubjectCode,
+).map((code) => ({ key: code, label: SUBJECT_LABELS[code] }));
+
+export type SubjectKey = SubjectCode;
