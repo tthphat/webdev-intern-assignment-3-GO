@@ -25,5 +25,11 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src/**/*", "libs/**/*", "common/**/*"]
+  "include": [
+    "src/**/*",
+    "libs/**/*",
+    "common/**/*",
+    "../../packages/shared/src/candidate/candidate.type.ts",
+    "../../packages/shared/src/analytics/analytics.type.ts"
+  ]
 }

@@ -1,4 +1,4 @@
-import type { TopGroupACandidate } from '../domain/analytics.type.js';
+import type { TopGroupACandidate } from '@score-analytics/shared';
 
 type PrismaTopGroupARow = {
   registrationNumber: string;

@@ -1,7 +1,7 @@
 import type {
   ScoreDistribution,
   TopGroupACandidate,
-} from './analytics.type.js';
+} from '@score-analytics/shared';
 
 export const ANALYTICS_REPOSITORY = Symbol('ANALYTICS_REPOSITORY');
 

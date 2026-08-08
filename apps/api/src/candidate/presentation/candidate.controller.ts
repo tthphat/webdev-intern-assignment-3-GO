@@ -6,7 +6,7 @@ import {
   registrationNumberSchema,
 } from '@score-analytics/shared';
 
-@Controller('candidate')
+@Controller('candidates')
 export class CandidateController {
   constructor(
     private readonly getCandidateByRN: GetCandidateByRegistrationNumberUseCase,

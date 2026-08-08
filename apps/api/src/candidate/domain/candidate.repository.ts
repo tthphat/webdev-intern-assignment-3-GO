@@ -1,4 +1,4 @@
-import { Candidate } from './candidate.type.js';
+import { Candidate } from '@score-analytics/shared';
 
 export const CANDIDDATE_REPO = Symbol('CANDIDDATE_REPO');
 

@@ -1,0 +1,1 @@
+export type { TopGroupACandidate, ScoreDistribution} from './analytics.type.js';

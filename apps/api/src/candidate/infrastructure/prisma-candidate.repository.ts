@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { PRISMA_CLIENT } from '../../../libs/prisma/prisma.service.js';
 import { PrismaClient } from '../../generated/prisma/client.js';
 import type { CandidateRepository } from '../domain/candidate.repository.js';
-import { Candidate } from '../domain/candidate.type.js';
+import { Candidate } from '@score-analytics/shared';
 import { toCandidate } from './candidate.mapper.js';
 
 @Injectable()
