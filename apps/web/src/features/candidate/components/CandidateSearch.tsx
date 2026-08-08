@@ -9,7 +9,7 @@ import {
   type RegistrationNumberParams,
   registrationNumberSchema,
 } from "@score-analytics/shared";
-import { CandidateScoreCard } from "./CandidateScoreCard.jsx";
+import { CandidateScoreCard } from "./CandidateScoreCard";
 
 export function CandidateSearch() {
   const [candidate, setCandidate] = useState<Candidate | null>(null);
