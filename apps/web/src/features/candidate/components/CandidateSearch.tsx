@@ -10,6 +10,7 @@ import {
   registrationNumberSchema,
 } from "@score-analytics/shared";
 import { CandidateScoreCard } from "./CandidateScoreCard";
+import { Spinner } from "../../../components/ui/Spinner";
 
 export function CandidateSearch() {
   const [candidate, setCandidate] = useState<Candidate | null>(null);
@@ -65,9 +66,16 @@ export function CandidateSearch() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors disabled:opacity-75 cursor-pointer text-sm"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors disabled:opacity-75 cursor-pointer text-sm flex items-center gap-1.5"
               >
-                {isSubmitting ? "Checking..." : "Search"}
+                {isSubmitting ? (
+                  <>
+                    <Spinner className="text-white" />
+                    <span>{isSubmitting ? "Checking..." : "Search"}</span>
+                  </>
+                ) : (
+                  "Search"
+                )}
               </button>
             </div>
           </div>

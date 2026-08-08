@@ -4,7 +4,7 @@ import { routes } from "../../routes/routes";
 export function Sidebar() {
   return (
     <nav className="flex flex-col gap-1">
-      <h2 className="text-xl font-bold mb-6 px-4 text-white tracking-wide">
+      <h2 className="text-xl font-bold mb-6 px-4 tracking-wide" style={{ color: 'white' }}>
         Score Analytics
       </h2>
       {routes.map((route) => (
