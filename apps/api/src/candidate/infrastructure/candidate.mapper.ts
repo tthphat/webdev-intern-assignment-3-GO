@@ -1,5 +1,5 @@
 import { Candidate as PrismaCandidate } from '../../generated/prisma/client.js';
-import { Candidate } from './candidate.type.js';
+import { Candidate } from '../domain/candidate.type.js';
 
 export function toCandidate(prismaCandidate: PrismaCandidate): Candidate {
   return {
