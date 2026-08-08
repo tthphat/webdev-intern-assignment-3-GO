@@ -14,6 +14,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function seed() {
+  const existing = await prisma.candidate.count();
+
+  if (existing > 0) {
+    console.log(`Skipped seed: ${existing} candidates already exist`);
+    return;
+  }
+
   const batch: Prisma.CandidateCreateManyInput[] = [];
 
   const filePath = path.resolve(

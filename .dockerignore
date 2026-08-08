@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+**/dist
+dist
+.git
+.gitignore
+docs
+*.log
+*.tsbuildinfo
+.DS_Store
+assignment/screenshots
+apps/web/node_modules
+apps/api/node_modules
+packages/shared/node_modules
