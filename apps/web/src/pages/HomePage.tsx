@@ -24,12 +24,9 @@ const FEATURES = [
 export function HomePage() {
   return (
     <div className="space-y-8">
-      <div className="relative overflow-hidden rounded-xl bg-blue-950 text-white p-8 sm:p-12">
-        <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-blue-700/40 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-blue-600/30 blur-3xl" />
-
-        <div className="relative">
-          <p className="mb-3 inline-block rounded-full bg-yellow-400 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-blue-950">
+      <div className="bg-blue-950 text-white p-8 sm:p-12">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-blue-300">
             Vietnam High School Graduation Exam 2024
           </p>
           <h1 className="mt-4 mb-3 text-3xl sm:text-4xl font-bold text-yellow-400">
