@@ -9,6 +9,11 @@ export class CandidateController {
 
   @Get(':registrationNumber')
   async getCandidate(@Param('registrationNumber') registrationNumber: string) {
-    return this.getCandidateByRN.excute(registrationNumber);
+    const candidate = await this.getCandidateByRN.excute(registrationNumber);
+
+    return {
+      message: 'Candidate retrieved successfully',
+      data: candidate,
+    };
   }
 }
