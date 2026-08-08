@@ -81,7 +81,7 @@ function SubjectBarChart({ row }: { row: ScoreDistribution }) {
 
 function AggregateChart({ rows, maxTotal }: { rows: ScoreDistribution[]; maxTotal: number }) {
   return (
-    <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
+    <div className="hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm sm:block">
       <h3 className="mb-4 text-sm font-semibold text-slate-800 dark:text-slate-100">
         Overview - All Subjects
       </h3>
@@ -92,12 +92,20 @@ function AggregateChart({ rows, maxTotal }: { rows: ScoreDistribution[]; maxTota
           const label = subjectLabel(row.subject);
 
           return (
-            <div key={row.subject} className="flex items-center gap-3">
-              <span className="w-36 shrink-0 truncate text-sm font-medium text-slate-700 dark:text-slate-300">
-                {label}
-              </span>
+            <div
+              key={row.subject}
+              className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3"
+            >
+              <div className="flex w-full items-center justify-between gap-2 sm:w-36 sm:shrink-0 sm:justify-start">
+                <span className="truncate text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {label}
+                </span>
+                <span className="shrink-0 text-right text-sm font-semibold font-mono text-slate-900 dark:text-slate-100 sm:hidden">
+                  {total}
+                </span>
+              </div>
 
-              <div className="flex h-6 flex-1 overflow-hidden rounded-md bg-slate-100 dark:bg-slate-800">
+              <div className="flex h-6 w-full flex-1 overflow-hidden rounded-md bg-slate-100 dark:bg-slate-800">
                 {BANDS.map(({ key, color }) => {
                   const value = bandValue(row, key);
                   if (value === 0) return null;
@@ -121,7 +129,7 @@ function AggregateChart({ rows, maxTotal }: { rows: ScoreDistribution[]; maxTota
                 })}
               </div>
 
-              <span className="w-14 shrink-0 text-right text-sm font-semibold font-mono text-slate-900 dark:text-slate-100">
+              <span className="hidden w-14 shrink-0 text-right text-sm font-semibold font-mono text-slate-900 dark:text-slate-100 sm:block">
                 {total}
               </span>
             </div>
