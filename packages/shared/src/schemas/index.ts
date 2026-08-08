@@ -1,4 +1,4 @@
 export {
   registrationNumberSchema,
-  type RegistrationNumberType,
+  type RegistrationNumberParams,
 } from "./candidate.schema.js";

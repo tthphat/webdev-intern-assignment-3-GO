@@ -24,6 +24,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
         error: {
           code: exception.code,
           message: exception.message,
+          ...(exception.details !== undefined && {
+            details: exception.details,
+          }),
         },
       };
 

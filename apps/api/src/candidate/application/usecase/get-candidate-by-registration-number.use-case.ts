@@ -18,10 +18,10 @@ export class GetCandidateByRegistrationNumberUseCase {
       await this.candidateRepo.findByRegistrationNumber(registrationNumber);
 
     if (!candidate) {
-      throw new AppException(
-        ERROR_CODES.CANDIDATE_NOT_FOUND,
-        `Candidate '${registrationNumber}' not found`,
-      );
+      throw new AppException({
+        code: ERROR_CODES.CANDIDATE_NOT_FOUND,
+        message: `Candidate '${registrationNumber}' not found`,
+      });
     }
 
     return candidate;

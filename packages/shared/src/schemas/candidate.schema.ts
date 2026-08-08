@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-export const registrationNumberSchema = z
-  .string()
-  .regex(/^\d{7}$/, "Registration number must contain exactly 7 digits");
+export const registrationNumberSchema = z.object({
+  registrationNumber: z.string().regex(/^\d{8}$/, "Registration number must contain 8 digits")
+});
 
-export type RegistrationNumberType = z.infer<typeof registrationNumberSchema>;
+export type RegistrationNumberParams = z.infer<typeof registrationNumberSchema>;
